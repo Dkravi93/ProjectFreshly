@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 80%;
+  font-size: 25px;
+  text-align: center;
+  height: 780px;
+  display: flex;
+}
+.modal-content >div:nth-of-type(1){
+    width: 50%;
+    margin: 10px;
+  background-image: url("https://origin.xtlo.net/type=creativeArchive:clientId=234960547:creativeArchiveId=6983029269472488362:version=11:coreAssetsVersion=1544591110388/img/Brandshare_Desktop_OptionA_425x700_1625861810095.jpg");
+}
+.modal-content > div:nth-of-type(2){
+    width: 50%;
+    margin: 10px;
+}
+.modal-content > div:nth-of-type(2) > p{
+    font-size: 20px;
+}
+.modal-content > div:nth-of-type(2) > h2{
+    margin-top: 40px;
+}
+input{
+    width: 180px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: blue;
+    border: blue;
+    margin: 10px;
+}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  width: 35px;
+  border-radius: 50%;
+  background-color: teal;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    
+    <div>
+
+    </div>
+    <div>
+        <span class="close">&times;</span>
+        <h2>$90 for Friends, <br> $30 Just for You!</h2>
+        <p>Refer your friends and earn <br> $30 for each friend who joins!</p>
+        <br><br>
+        <p>Enter your email to get your share link</p>
+        <span>
+            <input type="text">
+            <input type="button" value="ENTER">
+        </span><br>
+        <span>
+            <input type="button" value="EMAIL">
+            <input type="button" value="FACEBOOK">
+        </span><br>
+        <span>
+            <input type="button" value="MESSENGER">
+            <input type="button" value="TWITTER">
+        </span><br>
+        <span>
+            <input type="button" value="WHATSAPP">
+            <input type="button" value="PINTREST">
+        </span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>

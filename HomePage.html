@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+            font-family:Arial, Helvetica, sans-serif;
+            
+        }
+        /* new popup css */
+
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        border: 1px solid #888;
+        width: 80%;
+        font-size: 25px;
+        text-align: center;
+        height: 780px;
+        display: flex;
+        }
+        .modal-content >div:nth-of-type(1){
+        width: 50%;
+        margin: 10px;
+        background-image: url("https://origin.xtlo.net/type=creativeArchive:clientId=234960547:creativeArchiveId=6983029269472488362:version=11:coreAssetsVersion=1544591110388/img/Brandshare_Desktop_OptionA_425x700_1625861810095.jpg");
+        }
+        .modal-content > div:nth-of-type(2){
+        width: 50%;
+        margin: 10px;
+        }
+        .modal-content > div:nth-of-type(2) > p{
+        font-size: 20px;
+        }
+        .modal-content > div:nth-of-type(2) > h2{
+        margin-top: 40px;
+        }
+        .inp{
+        width: 180px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: blue;
+        border: blue;
+        margin: 10px;
+        }
+        /* The Close Button */
+        .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        width: 35px;
+        border-radius: 50%;
+        background-color: teal;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+
+        /* new popup css */
+        .navbar{
+            display: flex;
+            overflow: hidden;
+            top: 0vh;
+            width: 100%;
+            position: fixed;
+            background-color: #fff;
+            margin: auto;
+            padding: 10px;
+            height: 55px;
+            color: black;
+            font-weight: 700;
+        }
+        .navbar > img{
+            width: 100px;
+            height: 30px;
+            float: left;
+            margin: 10px 0px 10px 10px;
+            border-radius: 4px;
+        }
+        .navbar > span > button:nth-of-type(1){
+            width: 40px;
+            float: left;
+            height: 30px;
+            background-color: transparent;
+            border: transparent;
+            font-weight: bold;
+            margin: 10px 10px 10px 0px;
+        }
+        .navbar > span > button:nth-of-type(2){
+            width: 80px;
+            float: left;
+            height: 30px;
+            background-color: blue;
+            color: white;
+            margin: 10px;
+            border: blue;
+            font-weight: 400;
+        }
+        .navbar > div{
+            width: 550px;
+            float: left;
+            margin: 15px 180px 10px 250px;
+        }
+        .navbar > div >a{
+            font-size: small;
+            padding: 10px;
+        }
+        .partition-block{
+            display: flex;
+            width: 100%;
+            height: 750px;
+            font-weight: bold;
+            margin-top: 10px;
+            background-color: rgb(250, 244, 233);
+        }
+        .p-b-left{
+            width: 57%;
+            line-height: 40px;
+            font-size: 25px;
+            padding: 130px 0px 5px 60px;
+        }
+        .p-b-right{
+            width: 43%;
+            background-image: url("https://assets-global.website-files.com/5d03b4e130118314af624b20/6181bb1124863f69c44010d8_21_Winter2_BulkHolidayCampaign_C123020_1600x1067%20(1).jpg");
+            padding: 550px 30px 60px 150px;
+            font-size:25px;
+            color: white;
+            text-align: right;
+            line-height: 12px;
+        }
+        .animadiv{
+            display: flex;
+            margin: 45px;
+            justify-content: space-evenly;
+        }
+        #image-bg-div{
+            background-image: url("https://assets-global.website-files.com/5d03b4e130118314af624b20/5d94e04ff2b857688f7138b6_home_image2.jpg");
+            color: rgb(36, 33, 33);
+            height: 870px;
+            padding-top: 65px;
+        }
+        #overlay-on-image{
+            display:flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            border: 1px solid transparent;
+        }
+        #image-bg-div > div{
+            margin: auto;
+            padding: 60px;
+            background-color: white;
+            width: 600px;
+            height: 650px;
+            border: 1px solid transparent;
+            display: block;
+            font-size: 17px;
+            
+        }
+        #image-bg-div > div > button{
+            justify-content: center;
+        }
+        #overlay-on-image > div{
+            margin: auto;
+            width: 160px;
+            margin-bottom: 20px;
+            height: 180px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            text-align: center;
+        }
+        #overlay-on-image > div > img{
+            border-radius: 5px;
+            width: 100%;
+            height: 55%;
+        }
+        #freshly{
+            text-align: center;
+            margin: 80px 10px 0px 170px;
+            font: bold;
+            font-size: 20px;
+            width: 950px;
+        }
+        #freshly > p{
+            font-size: 19px;
+        }
+        .text-span-9{
+            color: teal;
+        }
+        .package-meal{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 28px;
+            padding: 10px;
+            font-weight: bolder;
+        }
+        .package-meal > div{
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        .butandship{
+            margin: 20px 10px 10px 15px;
+            color: teal;
+            font-weight: bolder;
+            text-align: center;
+        }
+        #overlay-on-image2{
+            display: flex;
+            justify-content: center;
+        
+        }
+        #overlay-on-image2 > div{
+            max-width: 250px;
+            height: 270px;
+            padding: 10px;
+            margin: auto;
+            text-align: center;
+        }
+        #div-logo{
+            display: flex;
+            width: 100%;
+            background-color: rgb(206, 206, 206);
+        }
+        #div-logo > img{
+            margin: 22px 40px 22px 40px;
+            width: 120px;
+            height: 80px;
+        }
+        #foot{
+            width: 100%;
+        }
+        #footbody{
+            display: flex;
+            padding: 40px;
+            margin: auto;
+            justify-content: space-evenly;
+        }
+        @media screen and (min-width:375px) and (max-width:780px) {
+            #media{
+                display: block;
+                width: 300px;
+                position: relative;
+
+            }
+            #media > img{
+                width: fit-content;
+            }
+            .partition-block{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .navbar{
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        #media{
+            display: none;
+        }
+        a:hover{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="media">
+        <img src="http://cdn.shopify.com/s/files/1/1061/1924/products/5_grande.png?v=1571606116" alt="">
+        <a>Please, go to deaktop view for better experience.</a>
+       <a>Sorry for the Inconvenience!</a>
+    </div>
+    <div class="navbar">
+       <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5fc4feea074f5b86a6c62285_freshly-logo-R.svg" alt="">
+       <div>
+        <a href="plan&menu.html">Plans & Menu</a>
+        <a href="howitWorks.html">How it Works</a>
+        <a href="gift.html">Gifts</a>
+        <a id="myBtn">Refer a Friend</a>
+
+        <!-- new pop -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              
+              <div>
+          
+              </div>
+              <div>
+                  <span class="close">&times;</span>
+                  <h2>$90 for Friends, <br> $30 Just for You!</h2>
+                  <p>Refer your friends and earn <br> $30 for each friend who joins!</p>
+                  <br><br>
+                  <p>Enter your email to get your share link</p>
+                  <span>
+                      <input class="inp" type="text" style="background-color: #fff;border: black;">
+                      <input class="inp" type="button" value="ENTER" style="background-color: rgb(2, 41, 41);">
+                  </span><br>
+                  <span>
+                      <input class="inp" type="button" value="EMAIL" style="background-color: tomato;">
+                      <input class="inp" type="button" value="FACEBOOK" style="background-color: rgb(166, 231, 15);">
+                  </span><br>
+                  <span>
+                      <input class="inp" type="button" value="MESSENGER" style="background-color: turquoise;">
+                      <input class="inp" type="button" value="TWITTER" style="background-color: violet;">
+                  </span><br>
+                  <span>
+                      <input class="inp" type="button" value="WHATSAPP" style="background-color: rgb(247, 22, 209);">
+                      <input class="inp" type="button" value="PINTREST" style="background-color: indigo;">
+                  </span>
+              </div>
+            </div>
+          
+          </div>
+          
+
+        <!-- new pop -->
+
+        <a>Help</a>
+       </div>
+       <span>
+        <button>Login</button>
+        <button>Sign Up</button>
+       </span>
+    </div>
+    <div class="partition-block">
+        <div class="p-b-left">
+            <h1>Chef cooked, <br> healthy meals <br> delivered to you.</h1>
+            <p style="font-size: 20px;">See meals available in your area!</p>
+            <label for="email" style="font-size: 15px;">Email Address</label>
+            <br>
+            <input type="text" name="" id="" style="width: 500px;height: 25px; border: 0.5px solid rgb(241, 236, 236); padding: 10px;" placeholder="freshly@freshly.com">
+            <br>
+            <label for="" style="font-size: 15px;">ZIP Code</label>
+            <br>
+            <span>
+                <input type="number" name="" id="" style="width: 350px;height: 25px;border-bottom: 1px solid rgb(122, 122, 122); border: 0.5px solid rgb(241, 236, 236); padding: 10px;" placeholder="111">
+                <input type="button" value="Explore Meals" style="width: 145px;height: 45px;background-color: blue;border: blue;color: white;font-size: 16px;">
+            </span>
+            <p style="font-size: 15px;font-weight: 400;">By continuing, you agree to our <u>Terms</u> and <u>Privacy Policy</u> <br> & will recieve email from  Freshly.</p>
+        </div>
+        <div class="p-b-right">
+            <p>Simplify the Season</p>
+            <a style="font-size: 14px;">Add heat & share holiday <br> favourite to your menu.</a>
+            <br>
+            <button style="width: 115px;color: white;font-size: 15px; height: 40px;background-color: blue;margin-top: 10px;">Learn More</button>
+            
+        </div>
+    </div>
+    <h1 style="text-align: center;font-size: 45px;margin-top: 60px;">How it Works</h1>
+    <div class="animadiv">
+    <div style="text-align: center;">
+        <img src="image1 (1).jpeg" alt="" width="250px" height="200px">
+        <h3>Choose Your Meals</h3>
+        <p>30+ menu of all-natural dishes.</p>
+    </div>
+    <div style="text-align: center;">
+        <img src="image1 (2).jpeg" alt="" width="250px" height="200px">
+        <h3>We cook & Deliver</h3>
+        <p>Cooked by chefs & sent fresh.</p>
+    </div>
+    <div style="text-align: center;">
+        <img src="image1 (3).jpeg" alt="" width="250px" height="200px">
+        <h3>You Heat Em' Up</h3>
+        <p>Ready to eat in 3 minutes.</p>
+    </div>
+    <div style="text-align: center;">
+        <img src="image1 (4).jpeg" alt="" width="250px" height="200px">
+        <h3>Eat & Repeat</h3>
+        <p>Skip a week or cancel anytime.</p>
+    </div>
+</div>
+    <div id="image-bg-div">
+          <div>
+              <h1 style="font-size: 45px;">On the menu</h1>
+              <p>Each Freshly meal is perfectly size for 1 person to enjoy at 1 sitting. Our fully- <br> prepared
+            meals are delivered fresh, and ready to eat in 3 minutes.</p>
+            <div id="overlay-on-image">
+                <div>
+                    <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61063fef3319dbcfa7088dc3_production-meal-image-29fee2e7-8e88-4cd3-aad9-0e7d25671f7f.jpeg" alt="" >
+                    <h5>Steaky Peppercorn</h5>
+                </div>
+                <div>
+                    <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b59780740bc10f4b4f61db_production-meal-image-e4122aa8-0fe7-4854-b6f5-e27e0c5be918.jpeg" alt="" >
+                    <h5>Steaky Peppercorn</h5>
+                </div>
+                <div>
+                    <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b59783e5bd3c766c377629_production-meal-image-92ec0fc1-d352-4720-9b83-96798ab8d2de.jpeg" alt="" >
+                    <h5>Steaky Peppercorn</h5>
+                </div>
+                
+                <div>
+                    <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/610640046931cb5d54bd5472_production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpeg" alt="" >
+                    <h5>Steaky Peppercorn</h5>
+                </div>
+                <div>
+                    <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b59789caa4969873e9b112_production-meal-image-bc1b24c8-f62a-4756-a40e-173a8b67a590.jpeg" alt="" >
+                    <h5>Steaky Peppercorn</h5>
+                </div>
+                <div>
+                    <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/6106400aa25771202335c782_production-meal-image-1a05b254-2fc5-4eec-9cec-5b1cde753c06.jpeg" alt="" >
+                    <h5>Steaky Peppercorn</h5>
+                </div>
+            </div>
+            <button style="background-color: rgb(7, 92, 204);width: 190px;margin-left: 200px; font-size: 18px; height: 55px;border: blue;color: rgb(238, 234, 234);font-weight: bold;">View Plans & Menu</button>
+          </div>
+    </div>
+    <div id="freshly">
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192ce7669f68694a8b969af_Group%20(8).svg" alt="">
+    <h2>Flexible plans that fit your life</h2>
+    <p>We offer anywhere from 4–12 meals per week, starting at <span class="text-span-9">$11.79 / meal</span>. <strong>The bigger your box, the more you’ll save</strong>—and you can always pause, cancel, or change your plan at any&nbsp;time.</p>
+    </div>
+    <div class="package-meal">
+    <div>
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg" loading="lazy" width="200" alt="4-5 Meals" class="_5-card-image">
+        <div class="text-span-9">4-5 Meals</div> 
+    </div>
+    <div>
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg" loading="lazy" width="200" alt="4-5 Meals" class="_5-card-image">
+        <div class="text-span-9">6-7 Meals</div> 
+    </div>
+    <div>
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg" loading="lazy" width="200" alt="4-5 Meals" class="_5-card-image">
+        <div class="text-span-9">8-9 Meals</div> 
+    </div>
+    <div>
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg" loading="lazy" width="200" alt="4-5 Meals" class="_5-card-image">
+        <div class="text-span-9">10-11 Meals</div> 
+    </div>
+    <div>
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg" loading="lazy" width="200" alt="4-5 Meals" class="_5-card-image">
+        <div class="text-span-9">12 Meals</div> 
+    </div>
+    </div>
+    <div class="butandship">
+        Shipping and tax added at checkout
+        <br>
+        <br>
+        <button style="width: 170px;height: 40px;border: rgb(8, 131, 202); background-color: rgb(8, 131, 202);color: white;font-size: 17px;">Sign Up Now</button>
+    </div>
+    <div>
+        <h1 style="margin: 90px 10px 70px 450px;">What Others Are Saying</h1>
+        <div id="overlay-on-image2">
+        <div >
+            <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d96607e740addd99bf570ae_star.svg" alt="" width="150px" height="30px">
+            <h3>Freshly, has changed our lives!</h3>
+            <p>With Freshly, we don’t have to go <br> anywhere or wait for delivery, and our monthly food bill has been cut nearly in <br> half. We love it.</p>
+            sheri.
+        </div>
+        <div>
+            <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d96607e740addd99bf570ae_star.svg" alt="" width="150px" height="30px">
+            <h3>Freshly, has changed our lives!</h3>
+            <p>With Freshly, we don’t have to go <br> anywhere or wait for delivery, and our monthly food bill has been cut nearly in <br> half. We love it.</p>
+             sheri.
+        </div>
+        <div>
+            <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d96607e740addd99bf570ae_star.svg" alt="" width="150px" height="30px">
+            <h3>Freshly, has changed our lives!</h3>
+            <p>With Freshly, we don’t have to go <br> anywhere or wait for delivery, and our monthly food bill has been cut nearly in <br> half. We love it.</p>
+            sheri.
+        </div>
+        </div>
+    </div>
+
+    <!-- <div id="webelieve"> -->
+        
+        <!-- <div class="abc">
+            <div id="newhorizon">
+                <h1>We believe eating right <br> should be easy for everyone.</h1>
+                <p>Each Freshly meal is perfectly sized for 1 person to enjoy at 1 sitting. Our fully- <br> prepared meals are delivered fresh, and ready to eat in 3 minutes.</p>
+                <button>Learn More</button>
+            </div>
+            <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d978a326f21d7b547d89e73_home_imageeat.jpg" alt="">
+        </div> -->
+    <!-- </div> -->
+
+    <div id="div-logo">
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f523e435aee2e3a4ab03e6f_The_Huffington_Post_logo.svg" alt="" >
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f523e412d98cd166a6c84e6_logo-header.64f3bdc15b1f321829f9f30c7853a1469f469d71.svg" alt="">
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f523e436b26e00a240533b1_Entrepreneur-01.svg" alt="">
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f523e432759db28ffaf924f_w-g-logo-black.svg" alt="">
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f523f552759db186baf93d2_techcrunch-seeklogo.com%20%5BConverted%5D.svg" alt="">
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f523e434bbecc1909457f48_logo-header.aeb2e510354d524c42a87c5d0a97d0a73c5d7581.svg" alt="">
+    </div>
+    
+    <div id="foot">
+        <div id="footbody">
+            <div>
+                <img src="icon-freshly.jpg" alt="" width="100px" height="30px" style="margin-top: 15px;">
+                <p>&#169;Freshly Inc.</p>
+            </div>
+            <div>
+                <h3>Company</h3>
+                <p>Careers</p>
+                <p>Contact Us</p>
+                <p>Press</p>
+                <p>Terms</p>
+                <p>Privacy</p>
+                <p>Affiliates</p>
+                <p>Partnerships</p>
+            </div>
+            <div>
+                <h3>Learn More</h3>
+                <p>Plans & Menu</p>
+                <p>Why Freshly?</p>
+                <p>Gifts</p>
+                <p>FAQs</p>
+                <p>Blog</p>
+                <p>Students</p>
+            </div>
+            <div>
+                 <h3>Join Us</h3>
+                 <span>
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423bbc67c09879c5a19b_5d795c37fedbb6017d824b02_icons8-facebook-old-30.jpg" alt="" width="20px" height="20px">
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423ad92101de48f410c7_5d10dfc0ef515f74b875a42c_icons8-instagram-50.jpg" alt="" width="20px" height="20px">
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423bd050163202b341e8_5d10dfc00442bfc99d3d6828_icons8-twitter-filled-50.jpg" alt="" width="20px" height="20px">
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423a6b26e039d505425e_5d10dfbfef515faad975a42b_icons8-pinterest-filled-50.jpg" alt="" width="20px" height="20px">
+                 </span>
+                 <br>
+                 <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d6439d4fb92e7630e46976b_Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="" width="100px" height="50px">
+                 <br>
+                 <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d643dd558306bfe1df5ef8b_google-play-badge.png" alt="" width="100px" height="30px">
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+
+
+<script>
+    window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementsByClassName("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+</script>

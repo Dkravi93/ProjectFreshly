@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+            font-family:Arial, Helvetica, sans-serif;
+            
+        }
+        /* this is nav bar section */
+        body{
+            background-color: rgb(255, 255, 255);
+            font-family:Arial, Helvetica, sans-serif;
+            
+        }
+        /* new popup css */
+
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        border: 1px solid #888;
+        width: 80%;
+        font-size: 25px;
+        text-align: center;
+        height: 780px;
+        display: flex;
+        }
+        .modal-content >div:nth-of-type(1){
+        width: 50%;
+        margin: 10px;
+        background-image: url("https://origin.xtlo.net/type=creativeArchive:clientId=234960547:creativeArchiveId=6983029269472488362:version=11:coreAssetsVersion=1544591110388/img/Brandshare_Desktop_OptionA_425x700_1625861810095.jpg");
+        }
+        .modal-content > div:nth-of-type(2){
+        width: 50%;
+        margin: 10px;
+        }
+        .modal-content > div:nth-of-type(2) > p{
+        font-size: 20px;
+        }
+        .modal-content > div:nth-of-type(2) > h2{
+        margin-top: 40px;
+        }
+        .inp{
+        width: 180px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: blue;
+        border: blue;
+        margin: 10px;
+        }
+        /* The Close Button */
+        .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        width: 35px;
+        border-radius: 50%;
+        background-color: teal;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+
+        /* new popup css */
+
+
+
+        .navbar{
+            display: flex;
+            overflow: hidden;
+            top: 0vh;
+            width: 100%;
+            position: fixed;
+            background-color: rgb(252, 248, 247);
+            margin: auto;
+            padding: 10px;
+            height: 55px;
+            color: black;
+            font-weight: 700;
+        }
+        .navbar > img{
+            width: 100px;
+            height: 30px;
+            float: left;
+            margin: 10px 0px 10px 10px;
+            border-radius: 4px;
+        }
+        .navbar > span > button:nth-of-type(1){
+            width: 40px;
+            float: left;
+            height: 30px;
+            background-color: transparent;
+            border: transparent;
+            font-weight: bold;
+            margin: 10px 10px 10px 0px;
+        }
+        .navbar > span > button:nth-of-type(2){
+            width: 80px;
+            float: left;
+            height: 30px;
+            background-color: blue;
+            color: white;
+            margin: 10px;
+            border: blue;
+            font-weight: 400;
+        }
+        .navbar > div{
+            width: 550px;
+            float: left;
+            margin: 15px 180px 10px 250px;
+        }
+        .navbar > div >a{
+            font-size: small;
+            padding: 12px;
+        }
+        #freshly{
+            text-align: center;
+            margin: 80px 10px 0px 170px;
+            font: bold;
+            font-size: 20px;
+            width: 950px;
+        }
+        #freshly > p{
+            font-size: 19px;
+        }
+        .text-span-9{
+            color: teal;
+        }
+        .package-meal{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 28px;
+            padding: 10px;
+            font-weight: bolder;
+        }
+        .package-meal > div{
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        .butandship{
+            margin: 20px 10px 10px 15px;
+            color: teal;
+            font-weight: bolder;
+            text-align: center;
+        }
+        #menu{
+            text-align: center;
+            font-size: 23px;
+            width: 62%;
+            color: black;
+            padding-top: 80px;
+            margin: auto;
+        }
+        #menu > p,label{
+            font-size: 14px;
+        }
+        .meals{
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 14px;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 150px;
+            text-align: center;
+            width: 100%;
+            border: 1px solid transparent;
+        }
+        .meals > div{
+            width: 275px;
+            height: fit-content;
+            margin: 15px;
+            border: 1px solid transparent;
+        }
+        .meals > div > img{
+            width: 275px;
+            height: 275px;
+
+        }
+        .atom{
+            width: 100%;
+            background-color: rgb(252, 248, 247);
+        }
+        #penultdiv{
+            width: 650px;
+            text-align: center;
+            margin: auto;
+            padding-top: 50px;
+        }
+        #penultdiv > h1{
+            font-size: 45px;
+        }
+        .gluten{
+            display: flex;
+            margin: 60px 10px 10px 75px;
+        }
+        .gluten >div{
+            margin: 20px;
+        }
+        #foot{
+            width: 100%;
+        }
+        #footbody{
+            display: flex;
+            padding: 40px;
+            margin: auto;
+            justify-content: space-evenly;
+        }
+        #faq{
+            width: 100%;
+            margin: auto;
+        }
+        /* this is faq css */
+        
+       /* body{
+    font-family: 'Work Sans', sans-serif;
+} */
+.faq-heading{
+    border-bottom: #777;
+    text-align: center;
+    padding: 20px 60px;
+}
+.faq-container{
+display: flex;
+justify-content: center;
+flex-direction: column;
+
+}
+.hr-line{
+  width: 60%;
+  margin: auto;
+  
+}
+/* Style the buttons that are used to open and close the faq-page body */
+.faq-page {
+    /* background-color: #eee; */
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 60%;
+    height: 20px;
+    color: blue;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+
+}
+.faq-body{
+    margin: auto;
+    /* text-align: center; */
+   width: 50%; 
+   padding: auto;
+   
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.faq-page:hover {
+    background-color: #F9F9F9;
+}
+
+/* Style the faq-page panel. Note: hidden by default */
+.faq-body {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+.faq-page:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+        /* this is faq css */
+        #learn{
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+        a:hover {
+            color: blue;
+        }
+        #mybtn{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5fc4feea074f5b86a6c62285_freshly-logo-R.svg" alt="">
+        <div>
+         <a href="plan&menu.html">Plans & Menu</a>
+         <a href="howitWorks.html">How it Works</a>
+         <a href="gift.html">Gifts</a>
+         <a id="myBtn">Refer a Friend</a>
+
+     <!-- new pop -->
+     <div id="myModal" class="modal">
+        <div class="modal-content">
+          
+          <div>
+      
+          </div>
+          <div>
+              <span class="close">&times;</span>
+              <h2>$90 for Friends, <br> $30 Just for You!</h2>
+              <p>Refer your friends and earn <br> $30 for each friend who joins!</p>
+              <br><br>
+              <p>Enter your email to get your share link</p>
+              <span>
+                  <input class="inp" type="text" style="background-color: #fff;border:1px solid black;">
+                  <input class="inp" type="button" value="ENTER" style="background-color: rgb(2, 41, 41);">
+              </span><br>
+              <span>
+                  <input class="inp" type="button" value="EMAIL" style="background-color: tomato;">
+                  <input class="inp" type="button" value="FACEBOOK" style="background-color: rgb(166, 231, 15);">
+              </span><br>
+              <span>
+                  <input class="inp" type="button" value="MESSENGER" style="background-color: turquoise;">
+                  <input class="inp" type="button" value="TWITTER" style="background-color: violet;">
+              </span><br>
+              <span>
+                  <input class="inp" type="button" value="WHATSAPP" style="background-color: rgb(247, 22, 209);">
+                  <input class="inp" type="button" value="PINTREST" style="background-color: indigo;">
+              </span>
+          </div>
+        </div>
+      
+      </div>
+      
+
+    <!-- new pop -->
+
+         
+
+         <a>Help</a>
+        </div>
+        <span>
+         <button>Login</button>
+         <button>Sign Up</button>
+        </span>
+     </div>
+    
+     <div id="freshly">
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192ce7669f68694a8b969af_Group%20(8).svg" alt="">
+    <h2>Flexible plans that fit your life</h2>
+    <p>We offer anywhere from 4–12 meals per week, starting at <span class="text-span-9">$11.79 / meal</span>. <strong>The bigger your box, the more you’ll save</strong>—and you can always pause, cancel, or change your plan at any&nbsp;time.</p>
+    </div>
+    <div class="package-meal">
+    <div>
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg" loading="lazy" width="200" alt="4-5 Meals" class="_5-card-image">
+        <div class="text-span-9">4-5 Meals</div> 
+    </div>
+    <div>
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg" loading="lazy" width="200" alt="4-5 Meals" class="_5-card-image">
+        <div class="text-span-9">6-7 Meals</div> 
+    </div>
+    <div>
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg" loading="lazy" width="200" alt="4-5 Meals" class="_5-card-image">
+        <div class="text-span-9">8-9 Meals</div> 
+    </div>
+    <div>
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg" loading="lazy" width="200" alt="4-5 Meals" class="_5-card-image">
+        <div class="text-span-9">10-11 Meals</div> 
+    </div>
+    <div>
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6192cc9d75bbb20e8074e602_Rectangle%20108.jpg" loading="lazy" width="200" alt="4-5 Meals" class="_5-card-image">
+        <div class="text-span-9">12 Meals</div> 
+    </div>
+    </div>
+    <div class="butandship">
+        Shipping and tax added at checkout
+        <br>
+        <br>
+        <button style="width: 170px;height: 40px;border: rgb(8, 131, 202); background-color: rgb(8, 131, 202);color: white;font-size: 17px;">Sign Up Now</button>
+    </div>
+
+
+    <div id="menu">
+        <h1>On the Menu</h1>
+        <p>Whatever your lifestyle, Freshly’s got you covered—with <u style="color: blue;">gluten-free</u>, dairy-free, <u style="color: blue;">plant-based</u>, and low-calorie meal options! Our low-lift lunches and done-for-you dinners provide an effortless alternative to everyday cooking, with nutritious <br> prepared meals delivered to your door. Explore this week’s dishes and start eating better:</p>
+        <br>
+        <label for="menucate" style="font-weight: 600;color: grey;">Menu Category:</label>
+        <select name="variety" id="variety" onchange="catsort()">
+            <option value="All Meals">All Meals</option>
+            <option value="Purely Plant">Purely Plant</option>
+            <option value="Signature Collection">Signature Collection</option>
+            <option value="FreshlyFit">FreshlyFit</option>
+        </select>
+    </div>
+    <div id="menu1"></div>
+    <div class="atom">
+    <div id="penultdiv">
+        <h1>For Every Diet & Lifestyle</h1>
+        <p>We’re here to make every dish delicious nutritious, with prepared meals that satisfy a wide range of tastes—all meticulously crafted to meet your dietary wants and needs.</p>
+        <div class="gluten">
+            <div>
+                <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/61859e80741c3728436ba69d_Layer%201.svg" alt="" width="200px" height="200px">
+                <h3>Pure Plant</h3>
+                <p>Plant based meal for <br> everyone</p>
+                <b><u style="color: blue;">Learn More</u></b>
+            </div>
+            <div>
+                <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/61859e808612f6b9e5328cf6_Group%20(7).svg" alt="" width="200px" height="200px">
+                <h3>Gluten Free</h3>
+                <p>Certified by the Gluten <br> Intolerance Group</p>
+                <b><u style="color: blue;">Leran More</u></b>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="faq">
+        <main>
+
+            <h1 class="faq-heading">Common Questions</h1>
+            <section class="faq-container">
+            <div class="faq-one">
+
+            <!-- faq question -->
+            <h5 class="faq-page">What is an FAQ Page?</h5>
+
+            <!-- faq answer -->
+            <div class="faq-body">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+            necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+            aperiam.
+            Perspiciatis, porro!</p>
+            </div>
+            </div>
+            <hr class="hr-line">
+
+            <div class="faq-two">
+
+            <!-- faq question -->
+            <h5 class="faq-page">How many are serving your meals?</h5>
+
+            <!-- faq answer -->
+
+            <div class="faq-body">
+            <p>The majority of our meals are single serving and meant to feed an average adult. We also offer multi-serve proteins and sides, which are designed to feed multiple people for extra mealtime flexibility. These delicious, ready-to-heat options can help you bulk up existing meals, simplify home cooking, or even build an entire meal—the choice is yours! Our 6-meal plan is perfect for a person looking for 6 dinners (or lunches!) a week. On average, our meals weigh in at about 13 ounces and range from 300 to 650 calories. If you have a larger household, we do offer a 12 meal per week subscription (it’s perfect for couples or a family of 4 looking for 3 meals per week). Plus, you can always order multiple subscriptions.</p>
+            </div>
+            </div>
+            <hr class="hr-line">
+
+
+            <div class="faq-three">
+
+            <!-- faq question -->
+            <h5 class="faq-page">Do you accommodate your dietry preferenceS?</h5>
+
+            <!-- faq answer -->
+            <div class="faq-body">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+            necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+            aperiam.
+            Perspiciatis, porro!</p>
+            </div>
+            </div>
+            <hr class="hr-line">
+            <div class="faq-four">
+
+            <!-- faq question -->
+            <h5 class="faq-page">How long do the meal last?</h5>
+
+            <!-- faq answer -->
+            <div class="faq-body">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+            necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+            aperiam.
+            Perspiciatis, porro!</p>
+            </div>
+            </div>
+            <hr class="hr-line">
+            </section>
+            </main>
+            <script src="main.js"></script>
+    </div>
+    <div id="learn">
+        <div style="font-family:Learningcurve,sans-serif;font-size: 32px;">Have other questions?</div>
+        <u style="color: blue;">Visit Our FAQs</u>
+    </div>
+    <hr>
+    <div id="foot">
+        <div id="footbody">
+            <div>
+                <img src="icon-freshly.jpg" alt="" width="100px" height="30px" style="margin-top: 15px;">
+                <p>&#169;Freshly Inc.</p>
+            </div>
+            <div>
+                <h3>Company</h3>
+                <p>Careers</p>
+                <p>Contact Us</p>
+                <p>Press</p>
+                <p>Terms</p>
+                <p>Privacy</p>
+                <p>Affiliates</p>
+                <p>Partnerships</p>
+            </div>
+            <div>
+                <h3>Learn More</h3>
+                <p>Plans & Menu</p>
+                <p>Why Freshly?</p>
+                <p>Gifts</p>
+                <p>FAQs</p>
+                <p>Blog</p>
+                <p>Students</p>
+            </div>
+            <div>
+                 <h3>Join Us</h3>
+                 <span>
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423bbc67c09879c5a19b_5d795c37fedbb6017d824b02_icons8-facebook-old-30.jpg" alt="" width="20px" height="20px">
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423ad92101de48f410c7_5d10dfc0ef515f74b875a42c_icons8-instagram-50.jpg" alt="" width="20px" height="20px">
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423bd050163202b341e8_5d10dfc00442bfc99d3d6828_icons8-twitter-filled-50.jpg" alt="" width="20px" height="20px">
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423a6b26e039d505425e_5d10dfbfef515faad975a42b_icons8-pinterest-filled-50.jpg" alt="" width="20px" height="20px">
+                 </span>
+                 <br>
+                 <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d6439d4fb92e7630e46976b_Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="" width="100px" height="50px">
+                 <br>
+                 <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d643dd558306bfe1df5ef8b_google-play-badge.png" alt="" width="100px" height="30px">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("#variety").addEventListener("click",catsort)
+    var dataplant = [
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597d1cd91f603525363a8_production-meal-image-fa4ff532-e487-4656-b98f-f489d59e73b6.jpeg",
+            name:"Indian-Spiced Chickpea Curry Bowl",
+            addon:"with Basmati Rice, Lentils & Veggies"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597d43ac70437e5b71901_production-meal-image-d090f3fe-cdf6-49ba-90a8-d4980759834f.jpeg",
+            name:"Glazed Parisian Carrots (16 oz)",
+            addon:"with Apple, Honey & Cinnamon"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597d77260c004cee951f7_production-meal-image-51fe566d-7bc5-4500-91b0-622d6c2e665c.jpeg",
+            name:"Unwrapped Salsa Verde Burrito",
+            addon:"with Purely Plant Crumbles"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597acbe052776e0d5d0a1_production-meal-image-e184440d-cfea-4806-b7e3-1e5856975959.jpeg",
+            name:"Sautéed French Green Beans (11 oz)",
+            addon:"with Garlic & Toasted Sliced Almonds"
+        }
+    ]
+    var dataAll =[
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597d1cd91f603525363a8_production-meal-image-fa4ff532-e487-4656-b98f-f489d59e73b6.jpeg",
+            name:"Indian-Spiced Chickpea Curry Bowl",
+            addon:"with Basmati Rice, Lentils & Veggies"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597d43ac70437e5b71901_production-meal-image-d090f3fe-cdf6-49ba-90a8-d4980759834f.jpeg",
+            name:"Glazed Parisian Carrots (16 oz)",
+            addon:"with Apple, Honey & Cinnamon"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597d77260c004cee951f7_production-meal-image-51fe566d-7bc5-4500-91b0-622d6c2e665c.jpeg",
+            name:"Unwrapped Salsa Verde Burrito",
+            addon:"with Purely Plant Crumbles"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597acbe052776e0d5d0a1_production-meal-image-e184440d-cfea-4806-b7e3-1e5856975959.jpeg",
+            name:"Sautéed French Green Beans (11 oz)",
+            addon:"with Garlic & Toasted Sliced Almonds"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b59789caa4969873e9b112_production-meal-image-bc1b24c8-f62a-4756-a40e-173a8b67a590.jpeg",
+            name:"Golden Oven-Fried Chicken & Mash",
+            addon:"with Roasted Sweet Corn"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/6106400aa25771202335c782_production-meal-image-1a05b254-2fc5-4eec-9cec-5b1cde753c06.jpeg",
+            name:"Chicken Livorno",
+            addon:"with Hearty White Beans & Kale"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/610640114648a3ca2a092bb0_production-meal-image-ffc15ae3-23b7-4e69-922a-75d54ed4dba3.jpeg",
+            name:"Creamy Chicken Korma",
+            addon:"with Ten-Veggie Medley"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b59792cedb2c58d31c456f_production-meal-image-ef64cbd3-cc91-4c5f-9865-b9ff0442572e.jpeg",
+            name:"Zingy Buffalo Chicken",
+            addon:"with Loaded Cauliflower"
+        }
+    ];
+    var datasignature =[
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b59789caa4969873e9b112_production-meal-image-bc1b24c8-f62a-4756-a40e-173a8b67a590.jpeg",
+            name:"Golden Oven-Fried Chicken & Mash",
+            addon:"with Roasted Sweet Corn"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/6106400aa25771202335c782_production-meal-image-1a05b254-2fc5-4eec-9cec-5b1cde753c06.jpeg",
+            name:"Chicken Livorno",
+            addon:"with Hearty White Beans & Kale"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/610640114648a3ca2a092bb0_production-meal-image-ffc15ae3-23b7-4e69-922a-75d54ed4dba3.jpeg",
+            name:"Creamy Chicken Korma",
+            addon:"with Ten-Veggie Medley"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b59792cedb2c58d31c456f_production-meal-image-ef64cbd3-cc91-4c5f-9865-b9ff0442572e.jpeg",
+            name:"Zingy Buffalo Chicken",
+            addon:"with Loaded Cauliflower"
+        }
+    ];
+    var datafreshly =[
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597d1cd91f603525363a8_production-meal-image-fa4ff532-e487-4656-b98f-f489d59e73b6.jpeg",
+            name:"Indian-Spiced Chickpea Curry Bowl",
+            addon:"with Basmati Rice, Lentils & Veggies"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597d43ac70437e5b71901_production-meal-image-d090f3fe-cdf6-49ba-90a8-d4980759834f.jpeg",
+            name:"Glazed Parisian Carrots (16 oz)",
+            addon:"with Apple, Honey & Cinnamon"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597d77260c004cee951f7_production-meal-image-51fe566d-7bc5-4500-91b0-622d6c2e665c.jpeg",
+            name:"Unwrapped Salsa Verde Burrito",
+            addon:"with Purely Plant Crumbles"
+        },
+        {
+            image:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b597acbe052776e0d5d0a1_production-meal-image-e184440d-cfea-4806-b7e3-1e5856975959.jpeg",
+            name:"Sautéed French Green Beans (11 oz)",
+            addon:"with Garlic & Toasted Sliced Almonds"
+        }
+    ];
+    var div = document.createElement("div");
+    div.setAttribute("class","meals");
+    for(var i =0;i<dataAll.length;i++){
+        var div1 = document.createElement("div");
+        var imz = document.createElement("img");
+        imz.setAttribute("src",dataAll[i].image);
+        // imz.style.width = "250px";
+        var title = document.createElement("h3");
+        title.textContent = dataAll[i].name;
+        var adds = document.createElement("p");
+        adds.textContent =dataAll[i].addon;
+        div1.append(imz,title,adds);
+        div.append(div1);
+        document.querySelector("#menu1").append(div);
+    }
+
+    function catsort(){
+        console.log("free");
+        div.textContent = "";
+        var x = document.querySelector("#variety").value;
+        if(x == "Purely Plant"){
+            for(var i =0;i<dataplant.length;i++){
+               var div1 = document.createElement("div");
+               var imz = document.createElement("img");
+               imz.setAttribute("src",dataplant[i].image);
+            //    imz.style.width = "250px";
+               var title = document.createElement("h3");
+               title.textContent = dataplant[i].name;
+               var adds = document.createElement("p");
+               adds.textContent =dataplant[i].addon;
+               div1.append(imz,title,adds);
+               div.append(div1);
+               document.querySelector("#menu1").append(div);
+            }
+        }
+        if(x == "Signature Collection"){
+            for(var i =0;i<datasignature.length;i++){
+               var div1 = document.createElement("div");
+               var imz = document.createElement("img");
+               imz.setAttribute("src",datasignature[i].image);
+            //    imz.style.width = "250px";
+               var title = document.createElement("h3");
+               title.textContent = datasignature[i].name;
+               var adds = document.createElement("p");
+               adds.textContent =datasignature[i].addon;
+               div1.append(imz,title,adds);
+               div.append(div1);
+               document.querySelector("#menu1").append(div);
+            }
+        }
+        if(x == "FreshlyFit"){
+            for(var i =0;i<datafreshly.length;i++){
+               var div1 = document.createElement("div");
+               var imz = document.createElement("img");
+               imz.setAttribute("src",datafreshly[i].image);
+            //    imz.style.width = "250px";
+               var title = document.createElement("h3");
+               title.textContent = datafreshly[i].name;
+               var adds = document.createElement("p");
+               adds.textContent =datafreshly[i].addon;
+               div1.append(imz,title,adds);
+               div.append(div1);
+               document.querySelector("#menu1").append(div);
+            }
+        }
+        if(x == "All Meals"){
+            for(var i =0;i<dataAll.length;i++){
+        var div1 = document.createElement("div");
+        var imz = document.createElement("img");
+        imz.setAttribute("src",dataAll[i].image);
+        // imz.style.width = "250px";
+        var title = document.createElement("h3");
+        title.textContent = dataAll[i].name;
+        var adds = document.createElement("p");
+        adds.textContent =dataAll[i].addon;
+        div1.append(imz,title,adds);
+        div.append(div1);
+        document.querySelector("#menu1").append(div);
+    }
+        }
+    }
+ 
+    
+    
+    
+        function q(num){
+         var c = 0;    
+        var x = document.createElement("div");
+        if(num == 1){
+        x.textContent = "The majority of our meals are single serving and meant to feed an average adult. We also offer multi-serve proteins and sides, which are designed to feed multiple people for extra mealtime flexibility. These delicious, ready-to-heat options can help you bulk up existing meals, simplify home cooking, or even build an entire meal—the choice is yours! Our 6-meal plan is perfect for a person looking for 6 dinners (or lunches!) a week. On average, our meals weigh in at about 13 ounces and range from 300 to 650 calories. If you have a larger household, we do offer a 12 meal per week subscription (it’s perfect for couples or a family of 4 looking for 3 meals per week). Plus, you can always order multiple subscriptions.";
+        document.querySelector("#faq1").append(x);
+        c++;
+        
+        }
+        if(num == 2){
+            x.textContent = "We accommodate a variety of dietary preferences, including plenty of gluten-free, dairy-free, peanut-free, plant-based, low-calorie, and carb-conscious options. As a customer, you can set your own dietary preferences and easily find the meals that work for you. You can also check out individual ingredient lists for each dish if you have specific concerns, or contact us at support@freshly.com for help making selections. If you’re unable to place an order that fits your preferences now, be sure to check back frequently as we’re always adding new and exciting dishes.";
+            document.querySelector("#faq2").append(x);
+        c++
+        
+        }
+        if(num == 3){
+            x.textContent = "Our meals are chef prepared and delivered fresh, so typically they have a refrigerated shelf life of about 3-5 days. Select items (such as seafood) are best eaten first, so we’ll add a badge on the package to let you know. We usually suggest enjoying these meals within the first few days of receiving your order, but you can always check their exact use-by date on the back-of-pack nutrition label. If you’re ever unable to finish your meals within their shelf life, you can always pop them into the freezer for extended storage. Just be sure to microwave your meal straight from the freezer and add a few extra minutes to reach the 165° F internal temperature we recommend.";
+            document.querySelector("#faq3").append(x);
+            c++
+        
+        }
+        if(num == 4){
+            x.textContent = "Your meals will come to you fully prepared so you just have to heat ‘em up in the microwave. On the back of each meal, you’ll find our easy steps for heating, but generally, the meals heat up in about 3 minutes (depending on your microwave). If you’re unsure, start at 2 minutes and heat in 30–second increments until the meal reaches an inner temperature of 165° F. Our meals are packaged to be heated in the microwave (for the ultimate convenience), but you can heat them in the oven if you’d like. Just so you know, our current meal containers aren’t safe for the oven or stovetop, so you’ll have to transfer your food to heat it up. You can check out the full oven reheat directions in our FAQs.";
+            document.querySelector("#faq4").append(x);
+            c++
+   
+        }
+        if(num == 5){
+            x.textContent = "To help guarantee your meals arrive in the freshest condition, there is a small shipping fee associated with your order. We deliver to all states within the continental U.S., and our shipping partners offer delivery every day of the week. The exact days that we can reach you will depend on your ZIP code and the carrier delivering your Freshly meals. Whether you're signing up or updating your typical delivery day, we'll show you all the days available to you so you can choose what's best for you.";
+            document.querySelector("#faq5").append(x);
+            c++
+       
+        }
+        if(num == 6){
+            x.textContent = "Every week you get to pick your selection of meals from our weekly rotation of 50+ options. Choose any number of meals between 4 and 12 per week, with prices starting at $11.79/meal. You'll pick the most convenient delivery day for you, and we'll ship your chef-cooked meals right to your doorstep! If you ever need to skip or cancel a week, or size your order up or down, it's easy to make changes to your upcoming delivery before the weekly deadline.";
+            document.querySelector("#faq6").append(x);
+            c++
+     
+        }
+        
+    }
+
+
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+</script>

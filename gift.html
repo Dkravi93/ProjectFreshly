@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* this is nav bar section */
+        body{
+            background-color: rgb(255, 255, 255);
+            font-family:Arial, Helvetica, sans-serif;
+            
+        }
+        /* new popup css */
+
+        .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        border: 1px solid #888;
+        width: 80%;
+        font-size: 25px;
+        text-align: center;
+        height: 780px;
+        display: flex;
+        }
+        .modal-content >div:nth-of-type(1){
+        width: 50%;
+        margin: 10px;
+        background-image: url("https://origin.xtlo.net/type=creativeArchive:clientId=234960547:creativeArchiveId=6983029269472488362:version=11:coreAssetsVersion=1544591110388/img/Brandshare_Desktop_OptionA_425x700_1625861810095.jpg");
+        }
+        .modal-content > div:nth-of-type(2){
+        width: 50%;
+        margin: 10px;
+        }
+        .modal-content > div:nth-of-type(2) > p{
+        font-size: 20px;
+        }
+        .modal-content > div:nth-of-type(2) > h2{
+        margin-top: 40px;
+        }
+        .inp{
+        width: 180px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: blue;
+        border: blue;
+        margin: 10px;
+        }
+        /* The Close Button */
+        .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        width: 35px;
+        border-radius: 50%;
+        background-color: teal;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+
+        /* new popup css */
+        .navbar{
+            display: flex;
+            overflow: hidden;
+            top: 0vh;
+            width: 100%;
+            position: fixed;
+            background-color: #fff;
+            margin: auto;
+            padding: 10px;
+            height: 55px;
+            color: black;
+            font-weight: 700;
+        }
+        .navbar > img{
+            width: 100px;
+            height: 30px;
+            float: left;
+            margin: 10px 0px 10px 10px;
+            border-radius: 4px;
+        }
+        .navbar > span > button:nth-of-type(1){
+            width: 50px;
+            float: left;
+            height: 30px;
+            background-color: transparent;
+            border: transparent;
+            font-weight: bold;
+            margin: 10px 10px 10px 0px;
+        }
+        .navbar > span > button:nth-of-type(2){
+            width: 80px;
+            float: left;
+            height: 30px;
+            background-color: blue;
+            color: white;
+            margin: 10px;
+            border: blue;
+            font-weight: 400;
+        }
+        .navbar > div{
+            width: 550px;
+            float: left;
+            margin: 15px 180px 10px 250px;
+        }
+        .navbar > div >a{
+            font-size: small;
+            padding: 10px;
+        }        
+        
+        /* this is nav bar section */
+        #gift-head{
+            display: flex;
+            width: 100%;
+            height: 600px;
+        }
+        #gift-head > div:nth-of-type(1){
+            width: 45%;
+            font-size: 25px;
+            padding: 50px 45px 10px 50px;
+        }
+        #gift-head > div:nth-of-type(2){
+            width: 55%;
+            background-image: url("https://assets-global.website-files.com/5d03b4e130118314af624b20/60928e2ceb6cb2368a43ad07_Freshly_GiftCardRedemption_1732x1416%20(1).jpg");
+            background-position-y: center;
+            background-position-x: center;
+            background-size: cover;
+        }
+        .gift-btn{
+            width: 150px;
+            height: 45px;
+        }
+        #anima{
+          width: 100%;
+          text-align: center;
+          margin: auto;
+          padding: 20px;
+          background-color: rgb(247, 243, 242);
+        }
+        .cooked{
+            display: flex;
+            margin: auto;
+        }
+        .cooked > div{
+            width: 350px;
+            padding: 30px;
+            height: 450px;
+        }
+        /* on the menu */
+        #image-bg-div{
+            background-image: url("https://assets-global.website-files.com/5d03b4e130118314af624b20/5d94e04ff2b857688f7138b6_home_image2.jpg");
+            color: rgb(36, 33, 33);
+            height: 870px;
+            padding-top: 65px;
+        }
+        #overlay-on-image{
+            display:flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            border: 1px solid transparent;
+        }
+        #image-bg-div > div{
+            margin: auto;
+            padding: 60px;
+            background-color: white;
+            width: 600px;
+            height: 650px;
+            border: 1px solid transparent;
+            display: block;
+            font-size: 17px;
+            
+        }
+        #image-bg-div > div > button{
+            justify-content: center;
+        }
+        #overlay-on-image > div{
+            margin: auto;
+            width: 160px;
+            margin-bottom: 20px;
+            height: 180px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            text-align: center;
+        }
+        #overlay-on-image > div > img{
+            border-radius: 5px;
+            width: 100%;
+            height: 55%;
+        }        
+        /* on the menu */
+
+        /* this is faq css */
+        .faq-heading{
+    border-bottom: #777;
+    text-align: center;
+    padding: 20px 60px;
+}
+.faq-container{
+display: flex;
+justify-content: center;
+flex-direction: column;
+
+}
+.hr-line{
+  width: 60%;
+  margin: auto;
+  
+}
+/* Style the buttons that are used to open and close the faq-page body */
+.faq-page {
+    /* background-color: #eee; */
+    cursor: pointer;
+    padding: 30px 20px;
+    width: 60%;
+    height: 20px;
+    color: blue;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: auto;
+
+}
+.faq-body{
+    margin: auto;
+    /* text-align: center; */
+   width: 50%; 
+   padding: auto;
+   
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.faq-page:hover {
+    background-color: #F9F9F9;
+}
+
+/* Style the faq-page panel. Note: hidden by default */
+.faq-body {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+.faq-page:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}        
+        /* this is faq css */
+        /* this is footer section */
+        #foot{
+            width: 100%;
+        }
+        #footbody{
+            display: flex;
+            padding: 40px;
+            margin: auto;
+            justify-content: space-evenly;
+        }        
+        /* this is footer section */
+        a:hover{
+            color: blue;
+        }
+        #gift-head > div:nth-of-type(1)> span >input[type=button]:nth-of-type(1){
+            background-color: blue;
+        }
+        #gift-head > div:nth-of-type(1)> span >input[type=button]:nth-of-type(1){
+            background-color: #3e8e41;
+            border: blue;
+        }
+        input[type=button]:hover{
+            background-color: #3e8e41;
+            border: blue;
+        }
+        .navbar > span >button:nth-of-type(1):hover{
+            background-color: teal;
+            color: #fff;
+        }
+        .navbar > span >button:nth-of-type(2):hover{
+            background-color: white;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<!-- this is nav bar     -->
+<div class="navbar">
+    <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5fc4feea074f5b86a6c62285_freshly-logo-R.svg" alt="">
+    <div>
+     <a href="plan&menu.html">Plans & Menu</a>
+     <a href="howitWorks.html">How it Works</a>
+     <a href="gift.html">Gifts</a>
+     <a id="myBtn">Refer a Friend</a>
+
+     <!-- new pop -->
+     <div id="myModal" class="modal">
+         <div class="modal-content">
+           
+           <div>
+       
+           </div>
+           <div>
+               <span class="close">&times;</span>
+               <h2>$90 for Friends, <br> $30 Just for You!</h2>
+               <p>Refer your friends and earn <br> $30 for each friend who joins!</p>
+               <br><br>
+               <p>Enter your email to get your share link</p>
+               <span>
+                   <input class="inp" type="text" style="background-color: #fff;border: black;">
+                   <input class="inp" type="button" value="ENTER" style="background-color: rgb(2, 41, 41);">
+               </span><br>
+               <span>
+                   <input class="inp" type="button" value="EMAIL" style="background-color: tomato;">
+                   <input class="inp" type="button" value="FACEBOOK" style="background-color: rgb(166, 231, 15);">
+               </span><br>
+               <span>
+                   <input class="inp" type="button" value="MESSENGER" style="background-color: turquoise;">
+                   <input class="inp" type="button" value="TWITTER" style="background-color: violet;">
+               </span><br>
+               <span>
+                   <input class="inp" type="button" value="WHATSAPP" style="background-color: rgb(247, 22, 209);">
+                   <input class="inp" type="button" value="PINTREST" style="background-color: indigo;">
+               </span>
+           </div>
+         </div>
+       
+       </div>
+       
+
+     <!-- new pop -->
+
+     <a>Help</a>
+    </div>
+    <span>
+     <button>Login</button>
+     <button>Sign Up</button>
+    </span>
+ </div>
+
+
+<!-- this is nav bar     -->
+    <div id="gift-head">
+        <div>
+            <h1>Perfect to Give. <br> Delicious to <br> Receive.</h1>
+            <h5>And far more nutritious than tchotchkes.</h5>
+            <span>
+                <input type="button" value="Give Freshly" class="gift-btn">
+                <input type="button" value="Redeem Gift" class="gift-btn">
+            </span>
+        </div>
+        <div></div>
+    </div>
+    <div id="anima">
+        <h1>How the Gift Works</h1>
+        <div class="cooked">
+            <div>
+                <img src="image1 (1).jpeg" alt="" width="100%" height="60%">
+                <h2>You choose the plan size</h2>
+                <p>Your gift starts their subscription on a free note by covering your recipient’s first delivery of fresh meals.</p>
+            </div>
+            <div>
+                <img src="image1 (4).jpeg" alt="" width="100%" height="60%">
+                <h2>They take it from there</h2>
+                <p>Your recipient will pick their first box of meals and set up their deliveries.</p>
+            </div>
+            <div>
+                <img src="image1 (3).jpeg" alt="" width="100%" height="60%">
+                <h2>We cook and deliver</h2>
+                <p>We cook their meals and send them directly to their door. After this first box, they can skip deliveries or cancel their subscription anytime.</p>
+    
+            </div>
+        </div>
+    </div>
+    <div id="image-bg-div">
+        <div>
+            <h1 style="font-size: 45px;">On the menu</h1>
+            <p>Each Freshly meal is perfectly size for 1 person to enjoy at 1 sitting. Our fully- <br> prepared
+          meals are delivered fresh, and ready to eat in 3 minutes.</p>
+          <div id="overlay-on-image">
+              <div>
+                  <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61063fef3319dbcfa7088dc3_production-meal-image-29fee2e7-8e88-4cd3-aad9-0e7d25671f7f.jpeg" alt="" >
+                  <h5>Steaky Peppercorn</h5>
+              </div>
+              <div>
+                  <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b59780740bc10f4b4f61db_production-meal-image-e4122aa8-0fe7-4854-b6f5-e27e0c5be918.jpeg" alt="" >
+                  <h5>Steaky Peppercorn</h5>
+              </div>
+              <div>
+                  <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b59783e5bd3c766c377629_production-meal-image-92ec0fc1-d352-4720-9b83-96798ab8d2de.jpeg" alt="" >
+                  <h5>Steaky Peppercorn</h5>
+              </div>
+              
+              <div>
+                  <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/610640046931cb5d54bd5472_production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpeg" alt="" >
+                  <h5>Steaky Peppercorn</h5>
+              </div>
+              <div>
+                  <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/61b59789caa4969873e9b112_production-meal-image-bc1b24c8-f62a-4756-a40e-173a8b67a590.jpeg" alt="" >
+                  <h5>Steaky Peppercorn</h5>
+              </div>
+              <div>
+                  <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/6106400aa25771202335c782_production-meal-image-1a05b254-2fc5-4eec-9cec-5b1cde753c06.jpeg" alt="" >
+                  <h5>Steaky Peppercorn</h5>
+              </div>
+          </div>
+          <button style="background-color: rgb(7, 92, 204);width: 190px;margin-left: 200px; font-size: 18px; height: 55px;border: blue;color: rgb(238, 234, 234);font-weight: bold;">View Plans & Menu</button>
+        </div>
+  </div>
+  <div id="faq">
+    <main>
+
+        <h1 class="faq-heading">Common Questions</h1>
+        <section class="faq-container">
+        <div class="faq-one">
+
+        <!-- faq question -->
+        <h5 class="faq-page">What is an FAQ Page?</h5>
+
+        <!-- faq answer -->
+        <div class="faq-body">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+        necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+        aperiam.
+        Perspiciatis, porro!</p>
+        </div>
+        </div>
+        <hr class="hr-line">
+
+        <div class="faq-two">
+
+        <!-- faq question -->
+        <h5 class="faq-page">How many are serving your meals?</h5>
+
+        <!-- faq answer -->
+
+        <div class="faq-body">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+        necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+        aperiam.
+        Perspiciatis, porro!</p>
+        </div>
+        </div>
+        <hr class="hr-line">
+
+
+        <div class="faq-three">
+
+        <!-- faq question -->
+        <h5 class="faq-page">Do you accommodate your dietry preferenceS?</h5>
+
+        <!-- faq answer -->
+        <div class="faq-body">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+        necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+        aperiam.
+        Perspiciatis, porro!</p>
+        </div>
+        </div>
+        <hr class="hr-line">
+        <div class="faq-four">
+
+        <!-- faq question -->
+        <h5 class="faq-page">How long do the meal last?</h5>
+
+        <!-- faq answer -->
+        <div class="faq-body">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit saepe sequi, illum facere
+        necessitatibus cum aliquam id illo omnis maxime, totam soluta voluptate amet ut sit ipsum
+        aperiam.
+        Perspiciatis, porro!</p>
+        </div>
+        </div>
+        </section>
+        </main>
+        <script src="main.js"></script>
+</div>
+
+<hr>
+<!-- this is footer -->
+<div id="foot">
+    <div id="footbody">
+        <div>
+            <img src="icon-freshly.jpg" alt="" width="100px" height="30px" style="margin-top: 15px;">
+            <p>&#169;Freshly Inc.</p>
+        </div>
+        <div>
+            <h3>Company</h3>
+            <p>Careers</p>
+            <p>Contact Us</p>
+            <p>Press</p>
+            <p>Terms</p>
+            <p>Privacy</p>
+            <p>Affiliates</p>
+            <p>Partnerships</p>
+        </div>
+        <div>
+            <h3>Learn More</h3>
+            <p>Plans & Menu</p>
+            <p>Why Freshly?</p>
+            <p>Gifts</p>
+            <p>FAQs</p>
+            <p>Blog</p>
+            <p>Students</p>
+        </div>
+        <div>
+             <h3>Join Us</h3>
+             <span>
+                 <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423bbc67c09879c5a19b_5d795c37fedbb6017d824b02_icons8-facebook-old-30.jpg" alt="" width="20px" height="20px">
+                 <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423ad92101de48f410c7_5d10dfc0ef515f74b875a42c_icons8-instagram-50.jpg" alt="" width="20px" height="20px">
+                 <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423bd050163202b341e8_5d10dfc00442bfc99d3d6828_icons8-twitter-filled-50.jpg" alt="" width="20px" height="20px">
+                 <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423a6b26e039d505425e_5d10dfbfef515faad975a42b_icons8-pinterest-filled-50.jpg" alt="" width="20px" height="20px">
+             </span>
+             <br>
+             <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d6439d4fb92e7630e46976b_Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="" width="100px" height="50px">
+             <br>
+             <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d643dd558306bfe1df5ef8b_google-play-badge.png" alt="" width="100px" height="30px">
+        </div>
+    </div>
+</div>
+<!-- this is footer -->
+</body>
+</html>
+<script>
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+</script>

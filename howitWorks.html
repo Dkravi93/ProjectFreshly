@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family:Arial, Helvetica, sans-serif;
+            color: rgb(54, 54, 54);
+        }
+        .navbar{
+            display: flex;
+            overflow: hidden;
+            top: 0vh;
+            width: 100%;
+            position: fixed;
+            background-color: #fff;
+            margin: auto;
+            padding: 10px;
+            height: 60px;
+            color: black;
+            font-weight: 700;
+        }
+        .navbar > img{
+            width: 100px;
+            height: 30px;
+            float: left;
+            margin: 10px 0px 10px 10px;
+            border-radius: 4px;
+        }
+        .navbar > button:nth-of-type(1){
+            width: 40px;
+            float: left;
+            height: 30px;
+            background-color: transparent;
+            border: transparent;
+            font-weight: bold;
+            margin: 10px;
+        }
+        .navbar > button:nth-of-type(2){
+            width: 80px;
+            float: left;
+            height: 30px;
+            background-color: blue;
+            color: white;
+            margin: 10px;
+            border: blue;
+            font-weight: 400;
+        }
+        .navbar > div{
+            width: 550px;
+            float: left;
+            margin: 15px 180px 10px 250px;
+        }
+        .navbar > div >a{
+            font-size: small;
+            padding: 10px;
+        }
+        #navy {
+            display: flex;
+            overflow: hidden;
+            top: 10vh;
+            width: 100%;
+            position: fixed;
+            font-weight: 400;
+            font-size: 14px;
+            color: rgb(48, 47, 47);
+            margin: auto;
+            background-color: white;
+            text-align: center;
+            border-bottom: 0.5px solid rgb(150, 149, 149);
+        }
+        #navy > p:nth-of-type(1){
+            float: left;
+            margin: 12px 10px 10px 420px;
+        }
+        #navy > p:nth-of-type(2){
+            float: left;
+            margin: 12px 10px 10px 10px;
+        }
+        #navy > p:nth-of-type(3){
+            float: left;
+            margin:12px 10px 10px 10px;
+        }
+        .text{
+            padding: 100px 10px 50px 10px;
+            text-align: center;
+            font: 900;
+            font-size: 25px;
+            font-weight: bolder;
+        }
+        .video-loop{
+            text-align: center;
+            font-size: 20px;
+            margin-top: 50px;
+            margin-bottom: 70px;
+        }
+        .video-loop > p{
+            font-size: 16px;
+            font: 100;
+        }
+        #warning{
+            display: flex;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        #warning > div:nth-of-type(1){
+            margin-left: 220px;
+        }
+        #warning > div{
+            margin: 30px;
+            
+        }
+        .block{
+            margin: auto;
+            width: 70%;
+            height: fit-content;
+        }
+        #warning > p{
+            font-size: 12px;
+        }
+        .gluten{
+            display: flex;
+            margin: auto;
+        }
+        .gluten > img,span{
+            margin: 25px;
+        }
+        #plansee{
+            width: 100%;
+            height: 200px;
+            background-position-y: center;
+            background-image: url("https://assets-global.website-files.com/5d03b4e130118314af624b20/5ec2ac1d2f98b30604f1f132_20-spring-1-group-test-qa-1455-72-dpi.jpg");
+        }
+        #plansee > button{
+            margin: 96px 500px 96px 500px;
+            width: 200px;
+            background-color: rgb(4, 96, 235);
+            color: white;
+            height: 50px;
+            border: rgb(4, 96, 235);
+        }
+        #warnin{
+            margin: auto;
+            display: flex;
+
+        }
+        #warnin{
+            margin-left: 100px;
+        }
+        #warnin > div{
+            margin: 30px;
+            text-align: center;
+            
+        }
+        #foot{
+            width: 100%;
+        }
+        #footbody{
+            display: flex;
+            padding: 40px;
+            margin: auto;
+            justify-content: space-evenly;
+        }
+        a:hover{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5fc4feea074f5b86a6c62285_freshly-logo-R.svg" alt="">
+        <div>
+         <a href="plan&menu.html">Plans & Menu</a>
+         <a href="howitWorks.html">How it Works</a>
+         <a href="gift.html">Gifts</a>
+         <a href="pop-up.html">Refer a Friend</a>
+         <a>Help</a>
+        </div>
+
+         <button>Login</button>
+         <button>Sign Up</button>
+    
+     </div>
+     <div id="navy">
+         <p>Food Philoshophy</p>
+         <p>How Freshly Works</p>
+         <p>Why Freshly</p>
+     </div>
+     <div class="text"><h1>About Freshly</h1></div>
+     <div class="video-loop">
+         <h1>Heat-and-eat in 3minutes or less</h1>
+         <p>See just how easy it is to prepare a chef-cooked Freshly meal</p>
+         <div style="width: 1000px;height: 450px;margin: auto;">
+         <video width="950" height="450" controls loop>
+            <source src="You.mp4" type="video/mp4">
+            <source src="You.ogg" type="video/ogg">
+          </video>
+        </div>
+</div>
+<div class="video-loop">
+        <h1>Our Food Philoshophy</h1>
+        <p>Our meals aren’t just ready in minutes... or just delicious... or just nutritious. They’re all three.</p>
+        <div id="warning">
+            <div>
+                <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5ec28f0020df16335dbda1b6_gp-less-sugar-nocopy%402x.png" alt="" width="180px" height="200px">
+                <h3>Less sugar</h3>
+                <p>Sweet, naturally</p>
+            </div>
+            <div>
+                <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5ec28f00f6ed944c5e2f02a3_gp-less-processed-nocopy%402x.png" alt="" width="180px" height="200px">
+                <h3>Less processed</h3>
+                <p>Only thoughtful ingredients</p>
+            </div>
+            <div>
+                <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5ec28f00a02e38947ec7759a_gp-more-nutrients-nocopy%402x.png" alt="" width="180px" height="200px">
+                <h3>More nutrients</h3>
+                <p>Simple swaps and sneaky veggies</p>
+            </div>
+        </div>
+        <button style="background-color: rgb(9, 126, 221);color: #fff;width: 150px;height: 50px;border: blue;">Learn More</button>
+    </div>
+    <div class="block">
+        <div class="gluten">
+            <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5ec28f01f830d90b04622505_image%402x-2.jpg" alt="" width="400px" height="300px">
+            <span>
+                <h1>Delicious Gluten-Free Options</h1>
+                <p>Freshly offers a host of gluten-free meals, so you can avoid gluten without skimping on variety or great taste.</p>
+                <p><u style="color: blue;">Learn More</u></p>
+            </span>
+        </div>
+        <div class="gluten">
+            <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5ec3f1c2ef738d8b21b284c9_lp-stealth-health-pesto-zoodles%402x.jpg" alt="" width="400px" height="300px">
+            <span>
+                <h1>Smart Nutrition</h1>
+                <p>Freshly chefs use clever swaps and sneaky veggies to craft meals with unexpected twists—so every bite is as nutritious as it is delicious.</p>
+                <p><u style="color: blue;">Learn More</u></p>
+            </span>
+        </div>
+        <div class="gluten">
+            <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/6155ec8c50610d16a9df5045_Purely_Plant_Unwrapped_Burrito%20(1).jpg" alt="" width="400px" height="300px">
+            <span>
+                <h1>Introducing: Purely Plant</h1>
+                <p>Our Purely Plant lineup offers seriously satisfying meals featuring our new plant-based protein.</p>
+                <p><u style="color: blue;">Learn More</u></p>
+            </span>
+        </div>
+    </div>
+    <div id="plansee">
+        <button>See Our Plans & Menu</button>
+    </div>
+
+    <div class="video-loop">
+        <h1>How Freshly Works</h1>
+        <p>We’re always hard at work making the Freshly experience easier for our customers.</p>
+        <div id="warnin">
+        <div>
+            <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/5d7ffdc4d863541cac775fa4_Heat%20your%20meal.png" alt="" width="300px" height="200px">
+            <h5>How to Heat Freshly Meals</h5>
+        </div>
+        <div>
+            <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/5d7ffdd9129cb7bc164454ed_ChangeMeals.png" alt="" width="300px" height="200px">
+            <h5>How to Change Your Freshly <br> Meals</h5>
+        </div>
+        <div>
+            <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/5d7ffdb9d863542ac9775f5a_Recycle%20our%20packaging.png" alt="" width="300px" height="200px">
+            <h5>How to Recycle Freshly <br> Packaging</h5>
+        </div>
+        </div>
+        <button style="background-color: rgb(9, 126, 221);color: #fff;width: 150px;height: 50px;border: blue;">Learn More</button>
+    </div>
+    <div class="block">
+        <div class="gluten">
+            <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5ec28f01f830d90b04622505_image%402x-2.jpg" alt="" width="450px" height="300px">
+            <span>
+                <h1>Delicious Gluten-Free Options</h1>
+                <p>Freshly offers a host of gluten-free meals, so you can avoid gluten without skimping on variety or great taste.</p>
+                <p><u style="color: blue;">Learn More</u></p>
+            </span>
+        </div>
+        <div class="gluten">
+            <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5ec3f1c2ef738d8b21b284c9_lp-stealth-health-pesto-zoodles%402x.jpg" alt="" width="450px" height="300px">
+            <span>
+                <h1>Smart Nutrition</h1>
+                <p>Freshly chefs use clever swaps and sneaky veggies to craft meals with unexpected twists—so every bite is as nutritious as it is delicious.</p>
+                <p><u style="color: blue;">Learn More</u></p>
+            </span>
+        </div>
+    </div>
+    <div class="video-loop">
+        <h1>Why Choose Freshly?</h1>
+        <p>When it comes to meal-time, you’ve got a lot of options. Some offer convenience,<br> some offer nutrition, and some offer the foods you crave. We offer all three. Why Freshly is Better Than Meal Kits</p>
+        <div id="warnin">
+        <div>
+            <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/5e0b6aafb1dab3604518506b_Branded_Images_0010_retouched-resize.jpg" alt="" width="300px" height="200px">
+            <h5>Why Freshly is Better Than <br> Meal Kits</h5>
+        </div>
+        <div>
+            <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/5da8d0bf1db45e3ad022dbe1_%201_life_unboxingrefresh-lo_03.jpg" alt="" width="300px" height="200px">
+            <h5>Why Freshly is Better than <br> Cooking</h5>
+        </div>
+        <div>
+            <img src="https://assets-global.website-files.com/5d03b4e13011831ae4624b37/5d8e3e6674cf44e1fefabe3b_hero%20(1).jpg" alt="" width="300px" height="200px">
+            <h5>Three Reasons to Leave <br> Takeout For Freshly</h5>
+        </div>
+        </div>
+        <button style="background-color: rgb(9, 126, 221);color: #fff;width: 150px;height: 50px;border: blue;">Learn More</button>
+    </div>
+    <hr>
+    <div id="foot">
+        <div id="footbody">
+            <div>
+                <img src="icon-freshly.jpg" alt="" width="100px" height="30px" style="margin-top: 15px;">
+                <p>&#169;Freshly Inc.</p>
+            </div>
+            <div>
+                <h3>Company</h3>
+                <p>Careers</p>
+                <p>Contact Us</p>
+                <p>Press</p>
+                <p>Terms</p>
+                <p>Privacy</p>
+                <p>Affiliates</p>
+                <p>Partnerships</p>
+            </div>
+            <div>
+                <h3>Learn More</h3>
+                <p>Plans & Menu</p>
+                <p>Why Freshly?</p>
+                <p>Gifts</p>
+                <p>FAQs</p>
+                <p>Blog</p>
+                <p>Students</p>
+            </div>
+            <div>
+                 <h3>Join Us</h3>
+                 <span>
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423bbc67c09879c5a19b_5d795c37fedbb6017d824b02_icons8-facebook-old-30.jpg" alt="" width="20px" height="20px">
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423ad92101de48f410c7_5d10dfc0ef515f74b875a42c_icons8-instagram-50.jpg" alt="" width="20px" height="20px">
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423bd050163202b341e8_5d10dfc00442bfc99d3d6828_icons8-twitter-filled-50.jpg" alt="" width="20px" height="20px">
+                     <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5f52423a6b26e039d505425e_5d10dfbfef515faad975a42b_icons8-pinterest-filled-50.jpg" alt="" width="20px" height="20px">
+                 </span>
+                 <br>
+                 <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d6439d4fb92e7630e46976b_Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="" width="100px" height="50px">
+                 <br>
+                 <img src="https://assets-global.website-files.com/5d03b4e130118314af624b20/5d643dd558306bfe1df5ef8b_google-play-badge.png" alt="" width="100px" height="30px">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
