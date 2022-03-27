@@ -101,7 +101,7 @@
             margin: 10px 0px 10px 10px;
             border-radius: 4px;
         }
-        .navbar > span > button:nth-of-type(1){
+        .navbar > span >a > button:nth-of-type(1){
             width: 40px;
             float: left;
             height: 30px;
@@ -110,7 +110,7 @@
             font-weight: bold;
             margin: 10px 10px 10px 0px;
         }
-        .navbar > span > button:nth-of-type(2){
+        .navbar > span > a >button:nth-of-type(2){
             width: 80px;
             float: left;
             height: 30px;
@@ -340,8 +340,9 @@
         <a>Help</a>
        </div>
        <span>
-        <button>Login</button>
-        <button>Sign Up</button>
+           <a href="Login.html">
+        <button class="bt_n">Login</button>
+        <button class="bt_n">Sign Up</button></a>
        </span>
     </div>
     <div class="partition-block">
@@ -585,4 +586,7 @@ var modal = document.getElementById("myModal");
         modal.style.display = "none";
       }
     }
+
+    
+
 </script>
